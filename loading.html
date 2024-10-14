@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loading</title>
+  <style>
+    body{
+      background: url("loading.jpg");
+      background-repeat: no-repeat;
+      background-size: 101%;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+<script>
+  let ram;
+  let time;
+  
+  
+  ram = navigator.deviceMemory;
+  
+  
+  
+  
+  
+  switch(ram){
+    case 0:
+      time = 1010100100001001000;
+      break;
+      case 1:
+        time = 10000;
+        break;
+        case 2:
+          time = 9000;
+          break;
+          case 3:
+            time = 8000;
+            break;
+            case 4:
+              time = 7000;
+              break;
+              case 5:
+                time = 6000;
+                break;
+                case 6:
+                  time = 5000;
+                  break;
+                  case 7:
+                    time = 4000;
+                    break;
+                    case 8:
+                      time = 3000;
+                      case 9:
+                        time = 2000;
+                        break;
+                        default:
+                        time = 10100002100001010;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  setTimeout(function(){
+    window.location.href = "verification.html"
+  }, time)
+  
+  
+  
+  
+  
+</script>
+
+</body>
+
+</html>
