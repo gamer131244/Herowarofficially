@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="title">Wait</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  
+  
+  <style>
+  
+  body{
+    background: #664343;
+  }
+  
+  
+  
+  
+  
+    #box{
+      height: 400px;
+      width: 400px;
+      background: #664343;
+      border-radius: 30px;
+      margin-left: 5px;
+      margin-top: 100px;
+      box-shadow: inset 1px 1px 10px;
+     
+    }
+    
+    
+    #time{
+      background: transparent;
+      outline: none;
+      border: none;
+      font-size: 50px;
+      text-align: center;
+      margin-left: 165px;
+      margin-top: 20px;
+      
+    }
+    
+    
+    
+    @keyframes spin{
+      0%{
+        transform: rotate(0deg);
+      }
+      
+      100%{
+        transform: rotate(360deg);
+      }
+    }
+    
+    
+    
+    #chk{
+      color: red;
+      transition: all 1s;
+    }
+    
+    
+    #wait{
+      color: white;
+      font-family: fantasy, monospace;
+      font-size: 15px;
+      text-align: center;
+    }
+    
+    
+    
+    #info{
+      color: white;
+      font-family: fantasy, monospace;
+      text-align: center;
+      margin-top: 150px;
+    }
+    
+    #w{
+      color: red;
+    }
+    
+    
+    
+    
+    #chk_em{
+      color: white;
+      font-family: fantasy, monospace;
+      text-align: center;
+      margin-top: 80px;
+      box-shadow: 1px 1px 10px inset black;
+      width: 250px;
+      border-radius: 20px;
+      margin-left: 80px;
+    }
+    
+    
+    
+    
+    
+    @media only screen and (min-width: 960px){
+     #box{
+       transform: scale(2);
+       margin-top: 30vh;
+       margin-left: 15vh;
+     }
+    }
+    
+    
+    
+    
+  
+    
+    
+  </style>
+</head>
+
+<body>
+ <div id="box">
+   <button id="time"><i class="fa-solid fa-clock fa-bounce" style="color: #63E6BE;"></i></button>
+   <h3 id="wait">Wait For <span id="chk">Approved</span></h3>
+   <h4 id="chk_em">Your Email Will be Check</h4>
+   <h5 id="info"><span id="w">Wait</span> For Around 30 sec</h5>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script type="module">
+   
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+  // TODO: Add SDKs 
+  const firebaseConfig = {
+    apiKey: "AIzaSyBg3RLSYY0SqHCwuPQ4IwPo3skkRYQLgyg",
+    authDomain: "herowar-41f8d.firebaseapp.com",
+    databaseURL: "https://herowar-41f8d-default-rtdb.firebaseio.com",
+    projectId: "herowar-41f8d",
+    storageBucket: "herowar-41f8d.appspot.com",
+    messagingSenderId: "535960391140",
+    appId: "1:535960391140:web:458ab1b34a591c4c500bf1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  
+  
+  import {getDatabase, ref, child, get, set, update, remove} from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
+  
+  const db = getDatabase();
+  
+  
+  let box = document.getElementById("box");
+  
+  
+  let ownervalue;
+  
+  let email = localStorage.getItem("email");
+  
+   
+   
+  
+  
+  function setOwner(){
+    set(ref(db, "login2/" + "value"), {
+      Value: ("null")
+    }).then(()=>{
+      alert("Done");
+    })
+  }
+  
+  
+  
+  
+  
+  setTimeout(function(){
+  setInterval(function(){
+    const refdb = ref(db)
+    ownervalue = get(child(refdb,  "login2/" + "value")).then((snapshot)=>{
+      ownervalue = snapshot.val().Value;
+      console.log(ownervalue)
+    })
+  })
+  }, 30000);
+  
+  
+  
+  
+  
+  setInterval(function(){
+    if(ownervalue == "done"){
+      window.location.href = "getDiamond.html";
+    } else if(ownervalue == "error"){
+      window.location.href = "error.html";
+    }
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+   
+   
+ </script>
+</body>
+
+</html>
